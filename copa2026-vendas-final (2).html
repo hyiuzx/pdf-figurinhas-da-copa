@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Álbum Digital Copa 2026 - Todas as Figurinhas para Imprimir</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #1a6e2e;
+      --green-light: #22913d;
+      --gold: #f5c518;
+      --gold-dark: #c9a000;
+      --cream: #faf8f2;
+      --dark: #111;
+      --text: #1c1c1c;
+      --muted: #666;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--green);
+      background-image:
+        radial-gradient(ellipse at top left, #2d8f47 0%, transparent 55%),
+        radial-gradient(ellipse at bottom right, #0e4a1e 0%, transparent 60%);
+      padding: 52px 20px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 800;
+      font-size: 13px;
+      padding: 5px 14px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(42px, 10vw, 80px);
+      color: #fff;
+      line-height: 1;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero-sub {
+      font-size: clamp(16px, 4vw, 20px);
+      color: rgba(255,255,255,0.85);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      font-weight: 600;
+    }
+
+    /* PREVIEW FOTOS */
+    .preview-strip {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 32px;
+      max-width: 680px;
+      padding: 0 8px;
+    }
+
+    .preview-strip .prev-img {
+      flex: 1;
+      min-width: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+      border: 2px solid rgba(255,255,255,0.15);
+      transition: transform 0.2s;
+      max-width: 200px;
+    }
+
+    .preview-strip .prev-img:nth-child(2) {
+      transform: scale(1.06);
+      border-color: var(--gold);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.5);
+    }
+
+    .preview-strip .prev-img img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 480px) {
+      .preview-strip { gap: 8px; }
+      .preview-strip .prev-img { border-radius: 8px; }
+    }
+
+    /* CTA BUTTON */
+    .btn-main {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      background: var(--gold);
+      color: var(--dark);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      padding: 18px 24px;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(245,197,24,0.4);
+      transition: transform 0.15s, box-shadow 0.15s;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-main:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(245,197,24,0.5);
+    }
+
+    .btn-main:active { transform: translateY(0); }
+
+    .hero-price-note {
+      margin-top: 12px;
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+    }
+
+    .hero-price-note strong {
+      color: var(--gold);
+      font-size: 22px;
+    }
+
+    /* SECTION */
+    section { padding: 56px 20px; }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--green-light);
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 7vw, 52px);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    /* PAIN SECTION */
+    .pain {
+      background: #fff;
+      border-top: 4px solid var(--gold);
+    }
+
+    .pain-list { list-style: none; margin-top: 24px; }
+
+    .pain-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+      color: #333;
+    }
+
+    .pain-list li:last-child { border-bottom: none; }
+
+    .pain-list .icon {
+      font-size: 20px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    /* WHAT YOU GET */
+    .get { background: var(--green); color: #fff; }
+    .get h2 { color: #fff; }
+    .get .section-label { color: var(--gold); }
+    .get p { color: rgba(255,255,255,0.85); }
+
+    .get-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 480px) {
+      .get-grid { grid-template-columns: 1fr; }
+    }
+
+    .get-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+
+    .get-card strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .get-card span { font-size: 14px; color: rgba(255,255,255,0.75); }
+
+    /* HOW IT WORKS */
+    .how { background: #fff; }
+
+    .steps {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .step { display: flex; gap: 16px; align-items: flex-start; }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-text strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    .step-text span { font-size: 15px; color: var(--muted); }
+
+    /* SOCIAL PROOF */
+    .proof {
+      background: var(--cream);
+      border-top: 1px solid #e8e3d7;
+      border-bottom: 1px solid #e8e3d7;
+    }
+
+    .comments {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .comment-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      border-left: 3px solid var(--green-light);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
+
+    .comment-card .name {
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+
+    .comment-card .text { font-size: 15px; color: #333; margin: 0; }
+
+    /* GUARANTEE */
+    .guarantee { background: #fff; }
+
+    .guarantee-box {
+      border: 2px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .guarantee-box .g-icon {
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .guarantee-box h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .guarantee-box p {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: var(--green);
+      background-image: radial-gradient(ellipse at bottom, #0e4a1e 0%, transparent 70%);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 8vw, 64px);
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .final-cta h2 span { color: var(--gold); }
+    .final-cta p { color: rgba(255,255,255,0.8); font-size: 16px; max-width: 400px; margin: 0 auto 28px; }
+
+    .final-price-old {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      color: rgba(255,255,255,0.45);
+      text-decoration: line-through;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .final-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 72px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .final-price-note { color: rgba(255,255,255,0.6); font-size: 13px; margin-bottom: 24px; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+    }
+
+    @keyframes pulse-gold {
+      0%, 100% { box-shadow: 0 4px 18px rgba(245,197,24,0.4); }
+      50% { box-shadow: 0 4px 32px rgba(245,197,24,0.7); }
+    }
+
+    .btn-main.pulse { animation: pulse-gold 2s ease-in-out infinite; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">Lançamento - Copa do Mundo 2026</div>
+    <h1>Álbum completo<br><span>para imprimir</span></h1>
+    <p class="hero-sub">Todas as figurinhas da Copa 2026 em PDF. Baixou, imprimiu, colou. Simples assim.</p>
+
+    
+    <div class="preview-strip">
+      <div class="prev-img">
+        <img src="argentina.jpeg" />
+      </div>
+      <div class="prev-img">
+        <img src="brasil.jpeg" />
+      </div>
+      <div class="prev-img">
+        <img src="portugal.jpeg" />
+      </div>
+    </div>
+
+
+
+    <a href="#comprar" class="btn-main pulse">Baixar agora</a>
+    <p class="hero-price-note">Pagamento único &mdash; acesso imediato</p>
+  </section>
+
+  <!-- PAIN -->
+  <section class="pain">
+    <div class="container">
+      <div class="section-label">A realidade</div>
+      <h2>Completar o álbum tá ficando caro demais</h2>
+      <p>Quem tem filho pequeno sabe como é. Cada envelope sobe de preço, as figurinhas que faltam custam mais que o álbum inteiro, e no final fica aquele álbum pela metade que ninguém completou.</p>
+      <ul class="pain-list">
+        <li>
+          <span class="icon">&#128176;</span>
+          <span>Envelopes cada vez mais caros e com cada vez menos figurinhas novas</span>
+        </li>
+        <li>
+          <span class="icon">&#128546;</span>
+          <span>Criança pedindo e você sem coração de falar que não tem dinheiro pra mais envelope</span>
+        </li>
+        <li>
+          <span class="icon">&#9940;</span>
+          <span>PDF na internet que ou é pela metade, ou é cheio de erro, ou é golpe mesmo</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="get">
+    <div class="container">
+      <div class="section-label">O que está incluído</div>
+      <h2>Tudo que você precisa, em um arquivo só</h2>
+      <p>Sem cadastro complicado, sem esperar meta de curtida, sem pegadinha. Você paga, recebe o link, baixa o PDF e imprime na hora que quiser.</p>
+
+      <div class="get-grid">
+        <div class="get-card">
+          <strong>Todas as seleções</strong>
+          <span>Nenhum país faltando, sem lacunas no álbum</span>
+        </div>
+        <div class="get-card">
+          <strong>Alta resolução</strong>
+          <span>Impressão nítida mesmo em impressora comum</span>
+        </div>
+        <div class="get-card">
+          <strong>Formato padrão</strong>
+          <span>Tamanho correto para caber certinho no álbum original</span>
+        </div>
+        <div class="get-card">
+          <strong>Acesso vitalício</strong>
+          <span>O arquivo é seu, pode baixar quantas vezes quiser</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="container">
+      <div class="section-label">Como funciona</div>
+      <h2>Três passos e pronto</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <strong>Você clica no botão e faz o pagamento</strong>
+            <span>Pix. Rápido e seguro.</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <strong>Recebe o link na hora</strong>
+            <span>Assim que o pagamento cair, o PDF já fica disponível pra você baixar.</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <strong>Imprime e cola</strong>
+            <span>Leva em qualquer gráfica ou imprime em casa. Figurinha boa, álbum completo.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="proof">
+    <div class="container">
+      <div class="section-label">Quem já completou</div>
+      <h2>O que as pessoas estão falando</h2>
+
+      <div class="comments">
+        <div class="comment-card">
+          <div class="name">Mayckon Z.</div>
+          <p class="text">Que alívio ter um lugar sério pra isso. Meu filho estava me enchendo o saco com o álbum faltando figurinha desde o começo da Copa.</p>
+        </div>
+        <div class="comment-card">
+          <div class="name">Rosângela C.</div>
+          <p class="text">Meu netinho adorou. Completou o álbum inteiro e ficou tão feliz. Valeu muito cada centavo.</p>
+        </div>
+        <div class="comment-card">
+          <div class="name">Kaio D.</div>
+          <p class="text">Melhor do que ficar atrás de gente que vende e some com o dinheiro. Aqui pelo menos é de verdade, chegou tudo certinho.</p>
+        </div>
+        <div class="comment-card">
+          <div class="name">Rafael S.</div>
+          <p class="text">Já imprimi e ficou perfeito. Recomendo pra todo mundo que quer ver a criançada feliz sem gastar fortuna.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="guarantee">
+    <div class="container">
+      <div class="section-label">Sem risco</div>
+      <h2>Se não funcionar, devolvo seu dinheiro</h2>
+
+      <div class="guarantee-box">
+        <div class="g-icon">&#128737;</div>
+        <h3>Pagamento 100% Seguro</h3>
+        <p>Seu pagamento é processado por empresa credenciada e totalmente segura, garantindo proteção dos seus dados durante toda a compra.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="comprar">
+    <h2>Álbum completo<br><span>por menos de dez reais</span></h2>
+    <p>Uma vez só. Sem mensalidade, sem renovação. Você paga, baixa, e o arquivo é seu pra sempre.</p>
+
+    <div class="final-price-old">R$ 39,90</div>
+    <div class="final-price">R$ 9,90</div>
+    <div class="final-price-note">Pagamento único. Acesso imediato.</div>
+
+    <a href="https://pay.lowify.com.br/checkout?product_id=HwhUK2" class="btn-main">Quero o PDF completo agora</a>
+  </section>
+
+<!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-label">Perguntas Frequentes</div>
+      <h2>Dúvidas frequentes</h2>
+
+      <div class="comments">
+        <div class="comment-card">
+          <div class="name">O produto é físico?</div>
+          <p class="text">Não. Você recebe um PDF digital para baixar e imprimir em casa.</p>
+        </div>
+
+        <div class="comment-card">
+          <div class="name">Como vou receber o álbum?</div>
+          <p class="text">Após a confirmação do pagamento, o acesso ao PDF é liberado no seu email ou Whatsapp imediatamente.</p>
+        </div>
+
+        <div class="comment-card">
+          <div class="name">Posso imprimir quantas vezes quiser?</div>
+          <p class="text">Sim. Depois de baixar o arquivo, você pode imprimir quantas vezes desejar.</p>
+        </div>
+
+        <div class="comment-card">
+          <div class="name">Funciona no celular?</div>
+          <p class="text">Sim. Você pode baixar o PDF diretamente no celular, computador ou tablet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+
+  <footer>
+    <p>Pagamento processado com segurança. Acesso enviado imediatamente após confirmação.</p>
+  </footer>
+
+</body>
+</html>
