@@ -1,3 +1,0 @@
-{
-  "rewrites": [{ "source": "/(.*)", "destination": "/copa2026-vendas-final.html" }]
-}
