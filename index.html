@@ -345,6 +345,53 @@
       margin: 0 auto;
     }
 
+  /* URGENCY BAR */
+    .urgency-bar {
+      background: #b03020;
+      color: #fff;
+      text-align: center;
+      padding: 8px 20px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    .urgency-bar .urg-label {
+      color: rgba(255,255,255,0.8);
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .urgency-bar .urg-timer {
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+      padding: 1px 10px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+      min-width: 60px;
+      display: inline-block;
+    }
+
+    .urgency-bar .urg-sep {
+      width: 1px;
+      height: 14px;
+      background: rgba(255,255,255,0.2);
+      display: inline-block;
+    }
     /* FINAL CTA */
     .final-cta {
       background: var(--green);
@@ -553,6 +600,14 @@
   
   <!-- FINAL CTA -->
   <section class="final-cta" id="comprar">
+
+    <!-- FAIXA DE URGÊNCIA -->
+    <div class="urgency-bar">
+      <span class="urg-label">Promoção expira em</span>
+      <span class="urg-sep"></span>
+      <span class="urg-timer" id="urgTimer">10:00</span>
+    </div>
+
     <h2>Álbum completo<br><span>por menos de dez reais</span></h2>
     <p>Uma vez só. Sem mensalidade, sem renovação. Você paga, baixa, e o arquivo é seu pra sempre.</p>
 
@@ -633,5 +688,36 @@ src="https://www.facebook.com/tr?id=2143540863168800&ev=PageView&noscript=1"
   a.setAttribute("defer", "");
   a.setAttribute("src", "https://lowtrack.com.br/pixel.js");
   document.head.appendChild(a);
+</script>
+
+<!-- TIMER DA URGÊNCIA -->
+<script>
+  (function () {
+    var STORAGE_KEY = 'urgency_deadline';
+    var deadline = localStorage.getItem(STORAGE_KEY);
+    if (!deadline) {
+      deadline = Date.now() + 10 * 60 * 1000;
+      localStorage.setItem(STORAGE_KEY, deadline);
+    }
+    deadline = parseInt(deadline, 10);
+
+    function pad(n) { return n < 10 ? '0' + n : n; }
+
+    function tick() {
+      var remaining = deadline - Date.now();
+      var el = document.getElementById('urgTimer');
+      if (!el) return;
+      if (remaining <= 0) {
+        el.textContent = '00:00';
+        return;
+      }
+      var m = Math.floor(remaining / 60000);
+      var s = Math.floor((remaining % 60000) / 1000);
+      el.textContent = pad(m) + ':' + pad(s);
+      setTimeout(tick, 500);
+    }
+
+    tick();
+  })();
 </script>
 </html>
