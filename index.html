@@ -28,6 +28,50 @@
       overflow-x: hidden;
     }
 
+    /* TOP URGENCY BAR */
+    .top-urgency-bar {
+      background: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      padding: 9px 20px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .top-urgency-bar .urg-label {
+      color: rgba(255,255,255,0.75);
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .top-urgency-bar .urg-timer {
+      background: var(--gold);
+      color: var(--dark);
+      border-radius: 4px;
+      padding: 2px 10px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+      min-width: 80px;
+      display: inline-block;
+    }
+
+    .top-urgency-bar .urg-sep {
+      width: 1px;
+      height: 14px;
+      background: rgba(255,255,255,0.2);
+      display: inline-block;
+    }
+
     /* HERO */
     .hero {
       background: var(--green);
@@ -73,11 +117,15 @@
     .hero h1 span { color: var(--gold); }
 
     .hero-sub {
-      font-size: clamp(16px, 4vw, 20px);
+      font-size: clamp(15px, 3.5vw, 18px);
       color: rgba(255,255,255,0.85);
       max-width: 520px;
       margin: 0 auto 32px;
       font-weight: 600;
+    }
+
+    .hero-sub strong {
+      color: var(--gold);
     }
 
     /* PREVIEW FOTOS */
@@ -159,6 +207,60 @@
       font-size: 22px;
     }
 
+    /* SOCIAL STRIP */
+    .social-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin: 18px auto 0;
+      max-width: 420px;
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+    }
+
+    .social-strip .ss-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .social-strip .ss-value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+
+    .social-strip .ss-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.65);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .social-strip .ss-stars {
+      font-size: 14px;
+      line-height: 1;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .social-strip .ss-divider {
+      width: 1px;
+      height: 32px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    @media (max-width: 380px) {
+      .social-strip { gap: 12px; font-size: 10px; }
+    }
+
     /* SECTION */
     section { padding: 56px 20px; }
 
@@ -193,6 +295,14 @@
     .pain {
       background: #fff;
       border-top: 4px solid var(--gold);
+    }
+
+    .pain-sub {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 16px;
+      margin-top: -8px;
     }
 
     .pain-list { list-style: none; margin-top: 24px; }
@@ -310,7 +420,14 @@
       font-weight: 800;
       font-size: 14px;
       color: var(--green);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
+    }
+
+    .comment-card .stars {
+      font-size: 13px;
+      color: var(--gold-dark);
+      letter-spacing: 1px;
+      margin-bottom: 6px;
     }
 
     .comment-card .text { font-size: 15px; color: #333; margin: 0; }
@@ -345,7 +462,7 @@
       margin: 0 auto;
     }
 
-  /* URGENCY BAR */
+    /* URGENCY BAR (oferta) */
     .urgency-bar {
       background: #b03020;
       color: #fff;
@@ -392,6 +509,7 @@
       background: rgba(255,255,255,0.2);
       display: inline-block;
     }
+
     /* FINAL CTA */
     .final-cta {
       background: var(--green);
@@ -444,17 +562,60 @@
     }
 
     .btn-main.pulse { animation: pulse-gold 2s ease-in-out infinite; }
+
+    /* FLOATING BADGE */
+    .floating-badge {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(20, 20, 20, 0.92);
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 30px;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+      z-index: 999;
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .floating-badge .fb-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4caf50;
+      flex-shrink: 0;
+      animation: blink-dot 1.4s ease-in-out infinite;
+    }
+
+    @keyframes blink-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
   </style>
 </head>
 <body>
 
+  <!-- TOP URGENCY BAR -->
+  <div class="top-urgency-bar">
+    <span class="urg-label">Oferta expira em</span>
+    <span class="urg-sep"></span>
+    <span class="urg-timer" id="topTimer">07:00:00</span>
+  </div>
+
   <!-- HERO -->
   <section class="hero">
     <div class="badge">Lançamento - Copa do Mundo 2026</div>
-    <h1>Álbum completo<br><span>para imprimir</span></h1>
-    <p class="hero-sub">Todas as figurinhas da Copa 2026 em PDF. Baixou, imprimiu, colou. Simples assim.</p>
+    <h1>Pare de gastar uma<br><span>fortuna com figurinhas</span></h1>
+    <p class="hero-sub">Baixe agora o PDF <strong>COMPLETO COM TODAS AS FIGURINHAS</strong> para imprimir por apenas <strong>R$9,90</strong>.</p>
 
-    
     <div class="preview-strip">
       <div class="prev-img">
         <img src="argentina.jpeg" />
@@ -467,9 +628,20 @@
       </div>
     </div>
 
-
-
     <a href="#comprar" class="btn-main pulse">Baixar agora</a>
+
+    <div class="social-strip">
+      <div class="ss-item">
+        <span class="ss-value">+3.000</span>
+        <span class="ss-label">Downloads</span>
+      </div>
+      <div class="ss-divider"></div>
+      <div class="ss-item">
+        <span class="ss-stars">★★★★★</span>
+        <span class="ss-label">Nas plataformas</span>
+      </div>
+    </div>
+
     <p class="hero-price-note">Pagamento único &mdash; acesso imediato</p>
   </section>
 
@@ -477,7 +649,8 @@
   <section class="pain">
     <div class="container">
       <div class="section-label">A realidade</div>
-      <h2>Completar o álbum tá ficando caro demais</h2>
+      <h2>Completar o álbum pode custar mais de dois mil reais!</h2>
+      <p class="pain-sub">Aqui você só gasta R$9,90.</p>
       <p>Quem tem filho pequeno sabe como é. Cada envelope sobe de preço, as figurinhas que faltam custam mais que o álbum inteiro, e no final fica aquele álbum pela metade que ninguém completou.</p>
       <ul class="pain-list">
         <li>
@@ -565,18 +738,22 @@
       <div class="comments">
         <div class="comment-card">
           <div class="name">Mayckon Z.</div>
+          <div class="stars">★★★★★</div>
           <p class="text">Que alívio ter um lugar sério pra isso. Meu filho estava me enchendo o saco com o álbum faltando figurinha desde o começo da Copa.</p>
         </div>
         <div class="comment-card">
           <div class="name">Rosângela C.</div>
+          <div class="stars">★★★★★</div>
           <p class="text">Meu netinho adorou. Completou o álbum inteiro e ficou tão feliz. Valeu muito cada centavo.</p>
         </div>
         <div class="comment-card">
           <div class="name">Kaio D.</div>
+          <div class="stars">★★★★★</div>
           <p class="text">Melhor do que ficar atrás de gente que vende e some com o dinheiro. Aqui pelo menos é de verdade, chegou tudo certinho.</p>
         </div>
         <div class="comment-card">
           <div class="name">Rafael S.</div>
+          <div class="stars">★★★★★</div>
           <p class="text">Já imprimi e ficou perfeito. Recomendo pra todo mundo que quer ver a criançada feliz sem gastar fortuna.</p>
         </div>
       </div>
@@ -597,15 +774,14 @@
     </div>
   </section>
 
-  
   <!-- FINAL CTA -->
   <section class="final-cta" id="comprar">
 
     <!-- FAIXA DE URGÊNCIA -->
     <div class="urgency-bar">
-      <span class="urg-label">Promoção de R$9,90 expira em</span>
+      <span class="urg-label">Promoção expira em</span>
       <span class="urg-sep"></span>
-      <span class="urg-timer" id="urgTimer">10:00</span>
+      <span class="urg-timer" id="urgTimer">07:00:00</span>
     </div>
 
     <h2>Álbum completo<br><span>por menos de dez reais</span></h2>
@@ -618,7 +794,7 @@
     <a href="https://pay.lowify.com.br/checkout?product_id=HwhUK2" class="btn-main">Quero o PDF completo agora</a>
   </section>
 
-<!-- FAQ -->
+  <!-- FAQ -->
   <section class="faq">
     <div class="container">
       <div class="section-label">Perguntas Frequentes</div>
@@ -648,14 +824,18 @@
     </div>
   </section>
 
-
-  
-
   <footer>
     <p>Pagamento processado com segurança. Acesso enviado imediatamente após confirmação.</p>
   </footer>
 
+  <!-- FLOATING BADGE -->
+  <div class="floating-badge">
+    <span class="fb-dot"></span>
+    63 pessoas comprando agora
+  </div>
+
 </body>
+
   <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -673,7 +853,8 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=2143540863168800&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-  <script>
+
+<script>
   window.pixelId = "6a0d02f11e2c473efa9fd55d";
   var a = document.createElement("script");
   a.setAttribute("async", "");
@@ -681,7 +862,8 @@ src="https://www.facebook.com/tr?id=2143540863168800&ev=PageView&noscript=1"
   a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
   document.head.appendChild(a);
 </script>
-  <script>
+
+<script>
   window.pixelId = "lt_px_5d6fd6ce1b59";
   var a = document.createElement("script");
   a.setAttribute("async", "");
@@ -690,13 +872,13 @@ src="https://www.facebook.com/tr?id=2143540863168800&ev=PageView&noscript=1"
   document.head.appendChild(a);
 </script>
 
-<!-- TIMER DA URGÊNCIA -->
+<!-- TIMER COMPARTILHADO (topo + oferta) -->
 <script>
   (function () {
-    var STORAGE_KEY = 'urgency_deadline';
+    var STORAGE_KEY = 'urgency_deadline_7h';
     var deadline = localStorage.getItem(STORAGE_KEY);
     if (!deadline) {
-      deadline = Date.now() + 10 * 60 * 1000;
+      deadline = Date.now() + 7 * 60 * 60 * 1000;
       localStorage.setItem(STORAGE_KEY, deadline);
     }
     deadline = parseInt(deadline, 10);
@@ -705,15 +887,23 @@ src="https://www.facebook.com/tr?id=2143540863168800&ev=PageView&noscript=1"
 
     function tick() {
       var remaining = deadline - Date.now();
-      var el = document.getElementById('urgTimer');
-      if (!el) return;
+      var top = document.getElementById('topTimer');
+      var bot = document.getElementById('urgTimer');
+
       if (remaining <= 0) {
-        el.textContent = '00:00';
+        if (top) top.textContent = '00:00:00';
+        if (bot) bot.textContent = '00:00:00';
         return;
       }
-      var m = Math.floor(remaining / 60000);
+
+      var h = Math.floor(remaining / 3600000);
+      var m = Math.floor((remaining % 3600000) / 60000);
       var s = Math.floor((remaining % 60000) / 1000);
-      el.textContent = pad(m) + ':' + pad(s);
+      var str = pad(h) + ':' + pad(m) + ':' + pad(s);
+
+      if (top) top.textContent = str;
+      if (bot) bot.textContent = str;
+
       setTimeout(tick, 500);
     }
 
